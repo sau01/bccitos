@@ -197,9 +197,9 @@ body{
         </div>
     </div>
   </div>
-  <a href="https://t.me/+deqpRVsn7qw2YmU1" target="_blank" style="text-shadow: 1px 1px black;"
+  <a href="#" onclick="trackAndRedirect()" style="text-shadow: 1px 1px black;"
      class="cta block py-5 rounded-xl font-bold text-red-500 text-xl text-uppercase mb-8">
-    🚀 Join Free Telegram Channel
+    Join Telegram
   </a>
 
   <div class="text-xs text-gray-400">
@@ -255,7 +255,22 @@ document.addEventListener('keydown',e=>{
 
 /* Disable drag */
 document.addEventListener('dragstart',e=>e.preventDefault());
-</script>
 
+
+  
+</script>
+<script>
+function trackAndRedirect() {
+  fbq('track', 'Lead', {
+    content_name: 'Telegram Join Button',
+    value: 1,
+    currency: 'INR'
+  });
+
+  setTimeout(function() {
+    window.location.href = "https://t.me/+deqpRVsn7qw2YmU1";
+  }, 500);
+}
+</script>
 </body>
 </html>
